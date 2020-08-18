@@ -8,11 +8,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 //Define database and collection in mongodb
-const dbName = 'Assignment3';
-const collectionName = 'jobreport';
+const dbName = '';
+const collectionName = '';
 
 //URL to connect mongodb
-const url = "mongodb+srv://vanmanh:tyV4IwrGZCVkwY9Y@demo-iqrsd.mongodb.net/test?retryWrites=true&w=majority";
+const url = "";
 
 //Allow Cross Origin RESOURCE SHARING
 app.use(cors());
