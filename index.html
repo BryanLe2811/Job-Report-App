@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Report</title>
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://localhost:3000/"> -->
+  <meta name="viewport" content="user-scalable=no,initial-scale=1.0,maximum-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" href="jobreport.css" />
+  <link rel="stylesheet" href="jquery.mobile.css" />
+
+  <script src="jquery.js"></script>
+  <script src="jquery.mobile.js"></script>
+  <script src="jobreport.js"></script>
+</head>
+<body>
+
+<!-- Second page with form to input data of toilet roll -->
+<div id="Item" data-role="page">
+  <div data-role="header" data-position="fixed" id ="itemHeader">
+	<button data-icon="delete" id="clear-btn">Clear</button>
+	<h1 id="itemHeader-h1">Job Report Form</h1>
+  <button class="ui-btn ui-btn-icon-left ui-icon-check" id="show-btn">Review Entry</button>
+  </div>
+  <div data-role="content">
+    <!-- Form to fill in Job Report details -->
+  	<form id="myForm"> 
+      <label for="text-basic">Name of Staff:</label>
+      <input type="text" name="text-basic" id="name" value="" placeholder="Your full name">
+      <label for="text-basic">Type of job:</label>
+      <select name ="select-choice-1" id="category">
+        <option value="">Select Type of Selling Item</option>
+        <option value="Liquor-Product">Liquor Product</option>
+        <option value="Snack">Snack</option>
+        <option value="Costmetic-Product">Cosmetic Product</option>
+      </select>
+      <label for="text-basic">Name of Product:</label>
+      <input type="text" name="text-basic" id="product" value="" placeholder="Product name">
+      <label for="text-basic">Original quantity:</label>
+      <input type="number" name="text-basic" id="quantity" value="" placeholder="">
+      <label for="text-basic">Sold quantity:</label>
+      <input type="number" name="text-basic" id="sold" value="" placeholder="">
+    </form>
+  <!-- Save Button -->
+	  <button id="save-btn">Save log entry</button>
+  </div>
+</div>
+
+<!-- Third page to show all the saved toilet roll details -->
+<div id="show-log-page" data-role="page">
+  <div data-role="header" data-position="fixed">
+	<button data-icon="plus" id="get-btn">Get</button>
+	<h1 id="showHeader">Your Entered Report</h1>
+	<button data-icon="home" id="send-btn">Send</button>
+  </div>
+  <div data-role="content">
+	<h1>Current log entries</h1>
+	<p>Date, lattitude, longitude, name, job type, original quantity, sold quanity</p>
+	<ul data-role="listview" id="showContent"></ul>
+  </div>
+  <div data-role="footer">
+    <button data-icon="delete" id="delete">Delete</button>
+    <!-- <a href="#list" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-delete">Delete Report</a> -->
+    <a href="#Item" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-home">Home</a>
+  </div>
+</div>
+
+<!-- Fourth page to show all the toilet roll details after Get Button clicked -->
+<div id="get-log-page" data-role="page">
+  <div data-role="header" data-position="fixed">
+  <!-- <button id="back-btn">Back</button> -->
+  <button class="ui-btn ui-btn-icon-left ui-icon-arrow-l" id="back-btn">Back</button>
+  <h1 id="getHeader">Your Reports of All Time</h1>
+  <a href="#Item" class="ui-btn ui-btn-inline ui-btn-icon-left ui-icon-home">Home</a>
+	<!-- <button data-icon="delete" id="send-btn">Home</button> -->
+  </div>
+  <div data-role="content">
+	<h1>Cloud Job Entries</h1>
+	<p>Date, lattitude, longitude, name, job type, original quantity, sold quanity</p>
+	<ul data-role="listview" id="getContent"></ul>
+  </div>
+</div>
+
+
+</body>
+</html>
+
